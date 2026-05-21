@@ -95,12 +95,12 @@ export default function Home() {
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80')" }}
         />
         <div className="relative z-20 max-w-7xl mx-auto px-6 pt-32 pb-20">
-          <p className="fade-up font-body text-xs tracking-[0.3em] uppercase gold mb-6">Uvoz automobila iz Evrope</p>
+          <p className="fade-up font-body text-xs tracking-[0.3em] uppercase gold mb-6">Uvoz automobila sa zatvorenih evropskih licitacija</p>
           <h1 className="fade-up-2 font-display text-7xl md:text-9xl leading-none mb-6">
-            VAŠA VIZIJA.<br /><span className="gold">NAŠ ZADATAK.</span>
+            UVOZIMO TI PROVEREN AUTO IZ EVROPE — BEZ RIZIKA OD PREVARE.
           </h1>
           <p className="fade-up-3 font-body text-white/60 text-lg max-w-lg mb-10 leading-relaxed">
-            Pronalazimo i uvozimo premium automobile iz Evrope direktno za vas. Transparentno, brzo i bez stresa.
+            Pronalazimo ti automobil sa kompletnom servisnom istorijom — sa zatvorenih licitacija u Nemačkoj, Austriji, Holandiji i Švajcarskoj, na koje običan kupac ne može da pristupi. Bez vraćene kilometraže. Bez skrivenih havarija. 10-15% jeftinije nego isti taj auto na domaćem placu.
           </p>
           <div className="fade-up-4 flex flex-col sm:flex-row gap-4">
             <a href="#kontakt" className="btn-gold text-black font-semibold px-8 py-4 rounded font-body tracking-wider uppercase text-sm text-center">
@@ -114,9 +114,9 @@ export default function Home() {
           {/* Stats */}
           <div className="mt-20 grid grid-cols-3 gap-8 max-w-lg">
             {[
-              { broj: "200+", label: "Uvezenih vozila" },
-              { broj: "5★", label: "Prosečna ocena" },
-              { broj: "15+", label: "Zemalja Evrope" },
+              { broj: "50+", label: "Dovezenih auta" },
+              { broj: "0", label: "Vraćenih klijenata" },
+              { broj: "3 god.", label: "Bez ijedne reklamacije" },
             ].map((s) => (
               <div key={s.label}>
                 <p className="font-display text-4xl gold">{s.broj}</p>
@@ -139,32 +139,32 @@ export default function Home() {
               {
                 icon: "🔍",
                 title: "Pronalaženje vozila",
-                opis: "Pretražujemo hiljade oglasa širom Evrope i pronalazimo tačno ono što tražite — po najboljoj ceni na tržištu.",
+                opis: "Ne tražimo po oglasima. Tražimo po zatvorenim licitacijama u celoj Evropi — tamo gde se prodaju auta lizing firmi, ovlašćenih dilera i kompanija. Tamo su auta sa kompletnom istorijom, pre nego što dođu na javni plac sa doteranom kilometražom.",
               },
               {
                 icon: "📋",
-                title: "Kompletna administracija",
-                opis: "Svu papirologiju, carinjenje i registraciju obavljamo umesto vas. Vi samo preuzimate ključeve.",
+                title: "Sva papirologija na nama",
+                opis: "EUR1, COC, faktura, carinjenje, homologacija, registracija. Ti ne ideš na šaltere. Ti dobiješ ključeve i saobraćajnu na svoje ime.",
               },
               {
                 icon: "🚗",
-                title: "Transport do vaših vrata",
-                opis: "Organizujemo siguran prevoz vozila iz bilo koje evropske države direktno na vašu adresu u Srbiji.",
+                title: "Transport i preuzimanje u Beogradu",
+                opis: "Auto dovozimo do Beograda — bez tvog putovanja u Evropu, bez nedelje izgubljenog vremena, bez troškova hotela i goriva. Ti dolaziš po auto kad je sve spremno i preuzimaš ga sa kompletnom dokumentacijom.",
               },
               {
                 icon: "🔧",
-                title: "Tehnički pregled",
-                opis: "Svako vozilo prolazi kroz detaljan tehnički pregled pre kupovine. Nikakvih iznenađenja po dolasku.",
+                title: "Provera istorije pre kupovine",
+                opis: "Pre nego što licitiramo ili kupimo bilo koji auto za tebe — proveravamo VIN broj u zvaničnim registrima. Servisna istorija, kilometraža, havarije, broj vlasnika. Ako bilo šta ne valja — ne kupujemo. Ti vidiš izveštaj pre nego što daš odluku.",
               },
               {
                 icon: "💰",
-                title: "Finansijska transparentnost",
-                opis: "Unapred znate tačnu ukupnu cenu — bez skrivenih troškova, bez iznenađenja na kraju procesa.",
+                title: "Jedna cena. Bez iznenađenja.",
+                opis: "Cena koju ti damo na početku je cena koju plaćaš na kraju. Sve uračunato — auto, transport, carina, PDV, AMSS, špedicija, naša usluga. Bez ah, zaboravili smo na ovu taksu na pola puta.",
               },
               {
                 icon: "🤝",
-                title: "Podrška posle kupovine",
-                opis: "Tu smo i nakon kupovine — od servisa do saveta, naš tim ostaje vaš pouzdani partner.",
+                title: "Tu smo i posle preuzimanja",
+                opis: "Ne nestajemo kad daš pare. Za sva pitanja oko dokumentacije, registracije ili saveta — javiš se i mi smo tu. Radimo na preporuku, zato nam je svaki klijent važan i posle posla.",
               },
             ].map((u) => (
               <div key={u.title} className="card-hover border border-white/10 rounded-lg p-8 bg-[#111]">
@@ -188,11 +188,11 @@ export default function Home() {
               <h2 className="font-display text-6xl md:text-7xl mb-10">VAŠA PREDNOST</h2>
               <div className="space-y-6">
                 {[
-                  "Direktna kupovina od proverenih dilera — bez posrednika",
-                  "Prosečna ušteda od 15-30% u poređenju sa domaćim cenama",
-                  "Garancija na svako uvezeno vozilo",
-                  "Celokupan proces završen za 2-4 nedelje",
-                  "Besplatna procena i savet pre donošenja odluke",
+                  "Pristup zatvorenim licitacijama koje običan kupac ne može da dobije — tamo su auta sa kompletnim tragom",
+                  "Ušteda 10-15% u odnosu na isti taj auto na domaćem placu — bez rizika koji ide uz domaći plac",
+                  "Proveravamo VIN broj svakog auta u zvaničnim registrima — kupujemo samo auta sa proverenom istorijom, originalnom kilometražom i bez havarija",
+                  "Kompletan proces do 60 dana — od prvog razgovora do ključeva u tvojoj ruci",
+                  "Razgovor i savet pre svake odluke — bez obaveze, ali bez ulepšavanja",
                 ].map((t, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -212,8 +212,8 @@ export default function Home() {
                 className="rounded-lg w-full object-cover aspect-[4/3]"
               />
               <div className="absolute -bottom-6 -left-6 bg-[#111] border border-white/10 rounded-lg p-6">
-                <p className="font-display text-4xl gold">15-30%</p>
-                <p className="font-body text-white/50 text-xs uppercase tracking-widest mt-1">Prosečna ušteda</p>
+                <p className="font-display text-4xl gold">10-15%</p>
+                <p className="font-body text-white/50 text-xs uppercase tracking-widest mt-1">Manje nego na domaćem placu</p>
               </div>
             </div>
           </div>
@@ -229,10 +229,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { br: "01", title: "Konsultacija", opis: "Razgovaramo o vašim željama, budžetu i potrebama. Besplatno i bez obaveza." },
-              { br: "02", title: "Pretraga", opis: "Pretražujemo evropsko tržište i šaljemo vam odabrane opcije sa svim detaljima." },
-              { br: "03", title: "Kupovina", opis: "Vi birate, mi kupujemo. Svu administraciju, carinjenje i transport obavljamo sami." },
-              { br: "04", title: "Isporuka", opis: "Vozilo stiže na vašu adresu, registrovano i spremno za vožnju." },
+              { br: "01", title: "Razgovor", opis: "Kažeš nam šta tražiš, koji budžet, koje su ti potrebe. Mi ti odmah kažemo šta je realno za tu cifru — bez ulepšavanja. Besplatno, bez obaveze." },
+              { br: "02", title: "Pretraga sa licitacija", opis: "Tražimo po zatvorenim licitacijama u celoj Evropi dok ne nađemo 2-3 auta koja zadovoljavaju sve tvoje uslove I našu proveru istorije. Šaljemo ti detaljan izveštaj o svakom — sa VIN proverom, fotografijama, servisnim trapom." },
+              { br: "03", title: "Tvoj izbor, naša odgovornost", opis: "Ti biraš auto. Mi licitiramo, kupujemo, šaljemo papirologiju, organizujemo transport, prolazimo carinu i homologaciju. Ti ne ideš na šalter ni jednom." },
+              { br: "04", title: "Preuzimanje u Beogradu", opis: "Kad je auto prošao carinu i kompletnu papirologiju, javljamo ti se da dođeš po njega u Beograd. Predajemo ti auto sa svom dokumentacijom — servisna istorija u koverti, sve spremno. Plaćaš onu istu cenu dogovorenu na početku." },
             ].map((k) => (
               <div key={k.br} className="relative">
                 <p className="font-display text-8xl gold opacity-20 leading-none mb-4">{k.br}</p>
@@ -254,11 +254,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-6xl md:text-8xl mb-6">
-            SPREMI ZA <span className="gold">VAŠE VOZILO?</span>
+            SPREMAN DA UVEZEŠ AUTO KAKO TREBA?
           </h2>
-          <p className="font-body text-white/50 mb-10 text-lg">Kontaktirajte nas danas i dobijte besplatnu procenu u roku od 24h.</p>
+          <p className="font-body text-white/50 mb-10 text-lg">Javi se i provešćemo te kroz ceo proces — kako biramo auto, kako proveravamo istoriju, šta je uključeno u cenu i koliko traje. Bez obaveze, ali ozbiljno: radimo sa ljudima koji stvarno planiraju kupovinu u narednih par meseci.</p>
           <a href="#kontakt" className="btn-gold text-black font-semibold px-10 py-5 rounded font-body tracking-wider uppercase text-sm inline-block">
-            Pokreni uvoz →
+            Zakaži razgovor →
           </a>
         </div>
       </section>
@@ -268,11 +268,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20">
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase gold mb-4">Stupite u kontakt</p>
+              <p className="font-body text-xs tracking-[0.3em] uppercase gold mb-4">Stupi u kontakt</p>
               <div className="divider mb-8" />
-              <h2 className="font-display text-6xl md:text-7xl mb-8">PIŠITE NAM</h2>
+              <h2 className="font-display text-6xl md:text-7xl mb-8">JAVI SE</h2>
               <p className="font-body text-white/50 leading-relaxed mb-10">
-                Imate pitanja ili ste spremni da krenete? Naš tim odgovara u roku od nekoliko sati.
+                Imaš pitanje ili si spreman da kreneš — piši nam. Provešćemo te kroz ceo proces i odgovoriti na sve pre nego što doneseš bilo kakvu odluku. Odgovaramo u roku od nekoliko sati, ne nekoliko dana.
               </p>
               <div className="space-y-6">
                 {[
@@ -293,12 +293,12 @@ export default function Home() {
                 <div className="border border-[#C9A84C]/30 rounded-lg p-12 text-center bg-[#111]">
                   <p className="text-5xl mb-4">✓</p>
                   <h3 className="font-display text-3xl gold mb-2">Poruka poslata!</h3>
-                  <p className="font-body text-white/50">Kontaktiraćemo vas u roku od 24h.</p>
+                  <p className="font-body text-white/50">Kontaktiraćemo te u roku od 24h.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {[
-                    { name: "ime", label: "Vaše ime", type: "text", placeholder: "Marko Marković" },
+                    { name: "ime", label: "Tvoje ime", type: "text", placeholder: "Marko Marković" },
                     { name: "telefon", label: "Telefon", type: "tel", placeholder: "+381 60 000 0000" },
                   ].map((f) => (
                     <div key={f.name}>
@@ -313,10 +313,10 @@ export default function Home() {
                     </div>
                   ))}
                   <div>
-                    <label className="font-body text-xs uppercase tracking-widest text-white/40 block mb-2">Šta tražite?</label>
+                    <label className="font-body text-xs uppercase tracking-widest text-white/40 block mb-2">Šta tražiš?</label>
                     <textarea
                       rows={4}
-                      placeholder="Opišite vaše željeno vozilo — marka, model, godište, budžet..."
+                      placeholder="Šta tražiš? (Marka, model, godište, budžet — i kada planiraš kupovinu)"
                       required
                       className="w-full bg-[#111] border border-white/10 rounded px-4 py-3.5 font-body text-white placeholder-white/20 focus:outline-none focus:border-[#C9A84C] transition-colors resize-none"
                       onChange={(e) => setFormData({ ...formData, poruka: e.target.value })}

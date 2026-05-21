@@ -95,12 +95,12 @@ export default function Home() {
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80')" }}
         />
         <div className="relative z-20 max-w-7xl mx-auto px-6 pt-32 pb-20">
-          <p className="fade-up font-body text-xs tracking-[0.3em] uppercase gold mb-6">Uvoz automobila sa zatvorenih evropskih licitacija</p>
+          <p className="fade-up font-body text-xs tracking-[0.3em] uppercase gold mb-6">Zatvorene evropske licitacije</p>
           <h1 className="fade-up-2 font-display text-5xl md:text-7xl leading-tight max-w-4xl mb-6">
             UVOZIMO TI PROVEREN AUTO IZ EVROPE. BEZ RIZIKA OD PREVARE.
           </h1>
           <p className="fade-up-3 font-body text-white/60 text-base max-w-xl mb-10 leading-relaxed">
-            Pronalazimo ti automobil sa kompletnom servisnom istorijom, sa zatvorenih licitacija u Nemačkoj, Austriji, Holandiji i Švajcarskoj. Bez vraćene kilometraže. Bez skrivenih havarija. 10-15% jeftinije nego isti taj auto na domaćem placu.
+            Automobili sa kompletnom istorijom, sa zatvorenih licitacija u Nemačkoj, Austriji i Švajcarskoj. Bez vraćene kilometraže. 10-15% jeftinije od domaćeg placa.
           </p>
           <div className="fade-up-4 flex flex-col sm:flex-row gap-4">
             <a href="#kontakt" className="btn-gold text-black font-semibold px-8 py-4 rounded font-body tracking-wider uppercase text-sm text-center">

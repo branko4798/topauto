@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     siteName: "Top Auto",
     locale: "sr_RS",
     type: "website",
+    images: [{ url: "https://topautouvoz.com/og-image.jpg", width: 1200, height: 1200 }],
   },
 };
 

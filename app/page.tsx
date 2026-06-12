@@ -100,7 +100,7 @@ export default function Home() {
             UVOZ PROVERENIH AUTOMOBILA IZ EVROPE.
           </h1>
           <p className="fade-up-3 font-body text-white/60 text-base max-w-xl mb-10 leading-relaxed">
-            Automobili sa proverenim kilometražama od prvog vlasnika, sa zatvorenih licitacija u Nemačkoj, Holandiji, Belgiji, Francuskoj, Španiji i Italiji. 10-15% jeftinije od domaćeg placa.
+            Automobili sa proverenim kilometražama od prvog vlasnika, sa zatvorenih licitacija u Nemačkoj, Holandiji, Belgiji, Francuskoj, Španiji i Italiji.
           </p>
           <div className="fade-up-4 flex flex-col sm:flex-row gap-4">
             <a href="#kontakt" className="btn-gold text-black font-semibold px-8 py-4 rounded font-body tracking-wider uppercase text-sm text-center">
@@ -189,7 +189,6 @@ export default function Home() {
               <div className="space-y-6">
                 {[
                   "Pristup zatvorenim licitacijama koje običan kupac ne može da dobije. Tamo su auta sa kompletnim tragom.",
-                  "Ušteda 10-15% u odnosu na isti taj auto na domaćem placu, bez rizika koji ide uz domaći plac.",
                   "Proveravamo VIN broj svakog auta u zvaničnim registrima. Kupujemo samo auta sa proverenom istorijom, originalnom kilometražom i bez havarija.",
                   "Kompletan proces do 60 dana, od prvog razgovora do ključeva u tvojoj ruci.",
                   "Razgovor i savet pre svake odluke. Bez obaveze, ali bez ulepšavanja.",
@@ -211,10 +210,6 @@ export default function Home() {
                 alt="Luksuzni automobil"
                 className="rounded-lg w-full object-cover aspect-[4/3]"
               />
-              <div className="absolute -bottom-6 -left-6 bg-[#111] border border-white/10 rounded-lg p-6">
-                <p className="font-display text-4xl gold">10-15%</p>
-                <p className="font-body text-white/50 text-xs uppercase tracking-widest mt-1">Manje nego na domaćem placu</p>
-              </div>
             </div>
           </div>
         </div>
@@ -312,7 +307,7 @@ export default function Home() {
               <div className="space-y-6">
                 {[
                   { label: "Telefon", value: "+381 60 000 0000" },
-                  { label: "Email", value: "info@topauto.rs" },
+                  { label: "Email", value: "podrska@topautouvoz.com" },
                   { label: "Lokacija", value: "Beograd, Srbija" },
                 ].map((c) => (
                   <div key={c.label}>

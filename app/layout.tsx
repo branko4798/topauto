@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Top Auto | Uvoz proverenih automobila iz Evrope",
-  description: "Uvozimo proverene automobile sa zatvorenih evropskih licitacija. Prave kilometraže od prvog vlasnika, kompletna papirologija, preuzimanje u Beogradu. 10-15% jeftinije od domaćeg placa.",
+  description: "Uvozimo proverene automobile sa zatvorenih evropskih licitacija. Prave kilometraže od prvog vlasnika, kompletna papirologija, preuzimanje u Beogradu.",
   openGraph: {
     title: "Top Auto | Uvoz proverenih automobila iz Evrope",
     description: "Uvozimo proverene automobile sa zatvorenih evropskih licitacija u Nemačkoj, Holandiji, Belgiji, Francuskoj, Španiji i Italiji.",

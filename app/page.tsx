@@ -100,7 +100,7 @@ export default function Home() {
             UVOZ PROVERENIH AUTOMOBILA IZ EVROPE.
           </h1>
           <p className="fade-up-3 font-body text-white/60 text-base max-w-xl mb-10 leading-relaxed">
-            Automobili sa kompletnom istorijom, sa zatvorenih licitacija u Nemačkoj, Austriji i Švajcarskoj. Bez vraćene kilometraže. 10-15% jeftinije od domaćeg placa.
+            Automobili sa proverenim kilometražama od prvog vlasnika, sa zatvorenih licitacija u Nemačkoj, Holandiji, Belgiji, Francuskoj, Španiji i Italiji. 10-15% jeftinije od domaćeg placa.
           </p>
           <div className="fade-up-4 flex flex-col sm:flex-row gap-4">
             <a href="#kontakt" className="btn-gold text-black font-semibold px-8 py-4 rounded font-body tracking-wider uppercase text-sm text-center">
@@ -257,17 +257,17 @@ export default function Home() {
               {
                 quote: "Mesecima sam gledao aute po oglasima i skoro kupio dva sa vraćenom kilometražom, srećom na vreme otkrio. Kad sam čuo za zatvorene licitacije, bio sam skeptičan. Na kraju smo dovezli Golf za manje nego što su tražili za slabije primerke ovde. Sve kao što su rekli od prvog razgovora.",
                 ime: "Nikola J.",
-                detalj: "Beograd · VW Golf 7 GTI, 2019.",
+                detalj: "Beograd · VW Golf 7 GTI, 2023.",
               },
               {
                 quote: "Mislio sam da će negde iskočiti neki trošak koji nisu pomenuli. Nije. Cena sa početka bila je cena na kraju. Auto je stigao za 44 dana, papiri u redu, bez gužve na šalteru. Kad me pitaju, preporučujem.",
                 ime: "Aleksandar M.",
-                detalj: "Novi Sad · BMW 320d, 2020.",
+                detalj: "Novi Sad · BMW 320d, 2022.",
               },
               {
                 quote: "I muž i ja smo bili skeptični. Pitali smo sve što nam je padalo na pamet pre nego što smo dali bilo kakav novac. Odgovorili su na sve, bez nerviranja. Auto je u garaži, dokumentacija uredna, kilometraža proverena. Nema šta da zamerimo.",
                 ime: "Jelena K.",
-                detalj: "Kragujevac · Audi A3, 2021.",
+                detalj: "Kragujevac · Audi A3, 2024.",
               },
             ].map((t) => (
               <div key={t.ime} className="card-hover border border-white/10 rounded-lg p-8 bg-[#111] flex flex-col justify-between">

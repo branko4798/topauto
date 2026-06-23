@@ -3,13 +3,6 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({ ime: "", telefon: "", poruka: "" });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
 
   return (
     <main className="bg-[#0a0a0a] text-white font-sans overflow-x-hidden">
@@ -295,69 +288,32 @@ export default function Home() {
 
       {/* KONTAKT */}
       <section id="kontakt" className="py-32 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-20">
-            <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase gold mb-4">Stupi u kontakt</p>
-              <div className="divider mb-8" />
-              <h2 className="font-display text-6xl md:text-7xl mb-8">JAVI SE</h2>
-              <p className="font-body text-white/50 leading-relaxed mb-10">
-                Imaš pitanje ili si spreman da kreneš, piši nam. Provešćemo te kroz ceo proces i odgovoriti na sve pre nego što doneseš bilo kakvu odluku. Odgovaramo u roku od nekoliko sati, ne nekoliko dana.
-              </p>
-              <div className="space-y-6">
-                {[
-                  { label: "Telefon", value: "+381 60 000 0000" },
-                  { label: "Email", value: "podrska@topautouvoz.com" },
-                  { label: "Lokacija", value: "Beograd, Srbija" },
-                ].map((c) => (
-                  <div key={c.label}>
-                    <p className="font-body text-xs uppercase tracking-widest text-white/30 mb-1">{c.label}</p>
-                    <p className="font-body text-white">{c.value}</p>
-                  </div>
-                ))}
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="font-body text-xs tracking-[0.3em] uppercase gold mb-4">Stupi u kontakt</p>
+          <div className="divider mx-auto mb-8" />
+          <h2 className="font-display text-6xl md:text-7xl mb-8">JAVI SE</h2>
+          <p className="font-body text-white/50 leading-relaxed mb-12 max-w-xl mx-auto">
+            Imaš pitanje ili si spreman da kreneš, piši nam. Provešćemo te kroz ceo proces i odgovoriti na sve pre nego što doneseš bilo kakvu odluku. Odgovaramo u roku od nekoliko sati, ne nekoliko dana.
+          </p>
+          <div className="flex flex-col items-center gap-6 mb-12">
+            {[
+              { label: "Telefon", value: "+381 60 000 0000" },
+              { label: "Email", value: "podrska@topautouvoz.com" },
+              { label: "Lokacija", value: "Beograd, Srbija" },
+            ].map((c) => (
+              <div key={c.label}>
+                <p className="font-body text-xs uppercase tracking-widest text-white/30 mb-1">{c.label}</p>
+                <p className="font-body text-white">{c.value}</p>
               </div>
-            </div>
-
-            <div>
-              {sent ? (
-                <div className="border border-[#C9A84C]/30 rounded-lg p-12 text-center bg-[#111]">
-                  <p className="text-5xl mb-4">✓</p>
-                  <h3 className="font-display text-3xl gold mb-2">Poruka poslata!</h3>
-                  <p className="font-body text-white/50">Kontaktiraćemo te u roku od 24h.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {[
-                    { name: "ime", label: "Tvoje ime", type: "text", placeholder: "Marko Marković" },
-                    { name: "telefon", label: "Telefon", type: "tel", placeholder: "+381 60 000 0000" },
-                  ].map((f) => (
-                    <div key={f.name}>
-                      <label className="font-body text-xs uppercase tracking-widest text-white/40 block mb-2">{f.label}</label>
-                      <input
-                        type={f.type}
-                        placeholder={f.placeholder}
-                        required
-                        className="w-full bg-[#111] border border-white/10 rounded px-4 py-3.5 font-body text-white placeholder-white/20 focus:outline-none focus:border-[#C9A84C] transition-colors"
-                        onChange={(e) => setFormData({ ...formData, [f.name]: e.target.value })}
-                      />
-                    </div>
-                  ))}
-                  <div>
-                    <label className="font-body text-xs uppercase tracking-widest text-white/40 block mb-2">Šta tražiš?</label>
-                    <textarea
-                      rows={4}
-                      placeholder="Šta tražiš? (Marka, model, godište, budžet — i kada planiraš kupovinu)"
-                      required
-                      className="w-full bg-[#111] border border-white/10 rounded px-4 py-3.5 font-body text-white placeholder-white/20 focus:outline-none focus:border-[#C9A84C] transition-colors resize-none"
-                      onChange={(e) => setFormData({ ...formData, poruka: e.target.value })}
-                    />
-                  </div>
-                  <button type="submit" className="btn-gold w-full text-black font-semibold py-4 rounded font-body tracking-wider uppercase text-sm">
-                    Pošalji upit →
-                  </button>
-                </form>
-              )}
-            </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+381600000000" className="btn-gold text-black font-semibold px-10 py-5 rounded font-body tracking-wider uppercase text-sm">
+              Pozovi nas →
+            </a>
+            <a href="mailto:podrska@topautouvoz.com" className="border border-white/20 text-white px-10 py-5 rounded font-body tracking-wider uppercase text-sm hover:border-white/50 transition-colors">
+              Pošalji poruku →
+            </a>
           </div>
         </div>
       </section>
@@ -366,7 +322,7 @@ export default function Home() {
       <footer className="border-t border-white/5 py-10">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-display text-xl tracking-widest">TOP<span className="gold">AUTO</span></div>
-          <p className="font-body text-white/20 text-xs">© 2025 Top Auto. Sva prava zadržana.</p>
+          <p className="font-body text-white/20 text-xs">© 2026 Top Auto. Sva prava zadržana.</p>
           <p className="font-body text-white/20 text-xs">Beograd, Srbija</p>
         </div>
       </footer>

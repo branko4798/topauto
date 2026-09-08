@@ -1,6 +1,21 @@
 "use client";
 import { useState } from "react";
 
+const TEL = "+381600168928";
+const TEL_DISPLAY = "+381 60 016 8928";
+const WA_TEXT = "Zdravo, video sam vas na internetu. Zanima me uvoz automobila.";
+const WA = `https://wa.me/381600168928?text=${encodeURIComponent(WA_TEXT)}`;
+
+// Meta Pixel event; radi i kada pixel nije ucitan (dev, adblock)
+function track(event: string, params?: Record<string, unknown>) {
+  const fbq = (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq;
+  if (typeof fbq === "function") fbq("track", event, params);
+}
+
+const onWhatsApp = () => track("Contact", { method: "whatsapp" });
+const onCall = () => track("Contact", { method: "phone" });
+const onEmail = () => track("Contact", { method: "email" });
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -61,8 +76,14 @@ export default function Home() {
             <a href="#proces" className="hover:text-white transition-colors">Proces</a>
             <a href="#kontakt" className="hover:text-white transition-colors">Kontakt</a>
           </div>
-          <a href="#kontakt" className="hidden md:block btn-gold text-black text-sm font-semibold px-6 py-2.5 rounded font-body tracking-wider uppercase">
-            Zakaži razgovor
+          <a
+            href={WA}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onWhatsApp}
+            className="hidden md:block btn-gold text-black text-sm font-semibold px-6 py-2.5 rounded font-body tracking-wider uppercase"
+          >
+            WhatsApp
           </a>
           <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,8 +117,14 @@ export default function Home() {
             Automobili sa proverenim kilometražama od prvog vlasnika, sa zatvorenih licitacija u Nemačkoj, Holandiji, Belgiji, Francuskoj, Španiji i Italiji.
           </p>
           <div className="fade-up-4 flex flex-col sm:flex-row gap-4">
-            <a href="#kontakt" className="btn-gold text-black font-semibold px-8 py-4 rounded font-body tracking-wider uppercase text-sm text-center">
-              Zakaži razgovor →
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onWhatsApp}
+              className="btn-gold text-black font-semibold px-8 py-4 rounded font-body tracking-wider uppercase text-sm text-center"
+            >
+              Piši nam na WhatsApp →
             </a>
             <a href="#proces" className="border border-white/20 text-white px-8 py-4 rounded font-body tracking-wider uppercase text-sm hover:border-white/50 transition-colors text-center">
               Kako radimo
@@ -280,9 +307,24 @@ export default function Home() {
             SPREMAN DA UVEZEŠ AUTO KAKO TREBA?
           </h2>
           <p className="font-body text-white/50 mb-10 text-base max-w-2xl mx-auto">Javi se i provešćemo te kroz ceo proces: kako biramo auto, kako proveravamo istoriju, šta je uključeno u cenu i koliko traje. Bez obaveze, ali ozbiljno: radimo sa ljudima koji stvarno planiraju kupovinu u narednih par meseci.</p>
-          <a href="#kontakt" className="btn-gold text-black font-semibold px-10 py-5 rounded font-body tracking-wider uppercase text-sm inline-block">
-            Zakaži razgovor →
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onWhatsApp}
+              className="btn-gold text-black font-semibold px-10 py-5 rounded font-body tracking-wider uppercase text-sm inline-block"
+            >
+              Piši nam na WhatsApp →
+            </a>
+            <a
+              href={`tel:${TEL}`}
+              onClick={onCall}
+              className="border border-white/20 text-white px-10 py-5 rounded font-body tracking-wider uppercase text-sm hover:border-white/50 transition-colors"
+            >
+              Pozovi {TEL_DISPLAY}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -297,7 +339,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col items-center gap-6 mb-12">
             {[
-              { label: "Telefon", value: "+381 60 000 0000" },
+              { label: "Telefon / WhatsApp", value: TEL_DISPLAY },
               { label: "Email", value: "podrska@topautouvoz.com" },
               { label: "Lokacija", value: "Beograd, Srbija" },
             ].map((c) => (
@@ -308,11 +350,28 @@ export default function Home() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+381600000000" className="btn-gold text-black font-semibold px-10 py-5 rounded font-body tracking-wider uppercase text-sm">
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onWhatsApp}
+              className="btn-gold text-black font-semibold px-10 py-5 rounded font-body tracking-wider uppercase text-sm"
+            >
+              WhatsApp →
+            </a>
+            <a
+              href={`tel:${TEL}`}
+              onClick={onCall}
+              className="border border-white/20 text-white px-10 py-5 rounded font-body tracking-wider uppercase text-sm hover:border-white/50 transition-colors"
+            >
               Pozovi nas →
             </a>
-            <a href="mailto:podrska@topautouvoz.com" className="border border-white/20 text-white px-10 py-5 rounded font-body tracking-wider uppercase text-sm hover:border-white/50 transition-colors">
-              Pošalji poruku →
+            <a
+              href="mailto:podrska@topautouvoz.com"
+              onClick={onEmail}
+              className="border border-white/20 text-white px-10 py-5 rounded font-body tracking-wider uppercase text-sm hover:border-white/50 transition-colors"
+            >
+              Pošalji mejl →
             </a>
           </div>
         </div>
@@ -326,6 +385,21 @@ export default function Home() {
           <p className="font-body text-white/20 text-xs">Beograd, Srbija</p>
         </div>
       </footer>
+
+      {/* PLUTAJUCI WHATSAPP */}
+      <a
+        href={WA}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onWhatsApp}
+        aria-label="Piši nam na WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-transform hover:scale-105"
+      >
+        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.943c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.9 11.9 0 0 0 5.74 1.462h.005c6.585 0 11.946-5.359 11.949-11.945a11.87 11.87 0 0 0-3.479-8.414"/>
+        </svg>
+        <span className="font-body text-sm font-semibold text-white hidden sm:block">WhatsApp</span>
+      </a>
     </main>
   );
 }
